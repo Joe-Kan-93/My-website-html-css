@@ -1,0 +1,881 @@
+html {
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+// Placeholder
+%keyframe {
+  -webkit-animation: focus-in-contract-bck 1s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+%after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: darkgray;
+  z-index: -1;
+}
+%position {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font: {
+    font-family: "Raleway", sans-serif;
+  }
+  header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    background: {
+      image: url(../img/000.jpg);
+      size: cover;
+      position: center;
+      attachment: fixed;
+      repeat: no-repeat;
+      color: white;
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: #000000;
+      z-index: -2;
+      opacity: 0.5;
+    }
+    .navbar {
+      width: 100%;
+      padding: 0;
+      transition: all 2s ease;
+      .focus-in-contract-bck {
+        @extend %keyframe;
+      }
+      a {
+        font-size: 1.5rem;
+      }
+      &:hover {
+        color: blue !important;
+      }
+    }
+    #home {
+      background-color: transparent;
+      height: 100%;
+      h2 {
+        font-size: 1.5rem;
+        color: rgb(180, 180, 180);
+        text-shadow: 1px 1px 2px #000;
+        position: absolute;
+        top: 30%;
+        opacity: 1;
+      }
+    }
+  }
+  main {
+    #about {
+      display: block;
+      transition: transform 1.5s ease-in-out 0.5s;
+      position: relative;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      background: {
+        color: darkgray;
+        image: url("../img/111.jpg");
+        position: center;
+        size: cover;
+        attachment: fixed;
+        repeat: no-repeat;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: black;
+        z-index: -1;
+        opacity: 0.5;
+      }
+    }
+
+    #skills {
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      -webkit-animation: Gradient 15s ease infinite;
+      -moz-animation: Gradient 15s ease infinite;
+      animation: Gradient 15s ease infinite;
+      #true,
+      #false {
+        width: 50%;
+        h1 {
+          font-size: 2rem;
+          color: white;
+          font-family: "Raleway", sans-serif;
+          transition: color 2s ease-in-out;
+          &:hover {
+            color: blue;
+          }
+        }
+        h2 {
+          font-size: 1.5rem;
+          color: white;
+          font-family: "Raleway", sans-serif;
+          transition: color 2s ease-in-out;
+          &:hover {
+            color: orange;
+          }
+        }
+        .skillbar {
+          position: relative;
+          display: block;
+          margin: 1.4rem auto;
+          width: 85%;
+          background: gray;
+          height: 2.4rem;
+          border-radius: 3px;
+          transition: 0.1s linear;
+          transition-property: width, background-color;
+        }
+        .skillbar-title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 110px;
+          font-weight: bold;
+          font-size: 1rem;
+          color: #ffffff;
+          background: darkgray;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          span {
+            display: block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+            height: 2.4rem;
+            line-height: 35px;
+            text-align: center;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+          }
+        }
+        .skillbar-bar {
+          height: 2.4rem;
+          width: 0px;
+          background: aqua;
+          border-radius: 3px;
+        }
+        .skill-bar-percent {
+          position: absolute;
+          right: 10px;
+          top: 0.3rem;
+          font-size: 1rem;
+          height: 1.4rem;
+          line-height: 1.5;
+          color: white;
+        }
+      }
+    }
+
+    #contact {
+      background: {
+        image: url(../img/333.jpg);
+        size: cover;
+        attachment: fixed;
+        position: center;
+        color: #fff;
+      }
+      height: 60vh;
+      #joke {
+        padding: 2%;
+        h1 {
+          color: orange;
+          font-size: 2rem;
+          text-shadow: 1px 1px 2px #000;
+        }
+        article {
+          margin: 1%;
+          width: 60%;
+          background-color: rgba(190, 160, 160, 0.3);
+          display: inline-block;
+          text-shadow: 1px 1px 2px black;
+          p {
+            font-size: 1rem;
+            color: black;
+          }
+          a {
+            color: blue;
+            text-decoration: none;
+          }
+        }
+        .contact-form {
+          margin: 0 auto;
+          width: 60%;
+          .form-control {
+            border-radius: 0 0 1rem 1rem;
+            background-color: lightblue;
+          }
+          .btnContact {
+            width: 100%;
+            border: none;
+            border-radius: 0 0 1rem 1rem;
+            padding: 1%;
+            background: blueviolet;
+            color: #fff;
+            cursor: pointer;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding: 1%;
+    color: white;
+    height: 200px;
+    background: {
+      color: black;
+    }
+    opacity: 0.9;
+    .focus-in-contract-bck {
+      @extend %keyframe;
+    }
+  }
+  #myBtn {
+    position: fixed;
+    bottom: 80px;
+    right: 1%;
+    z-index: 99;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: orange;
+    opacity: 0.8;
+    color: white;
+    cursor: pointer;
+    padding: 1% 2%;
+    border-radius: 5%;
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+
+// Media Query
+//
+//
+//
+//
+
+// #min-width: 1400px
+//
+//
+
+@media screen and (min-width: 1440px) {
+  body {
+    header {
+      #home {
+        h2 {
+          font-size: 2rem;
+          color: rgb(180, 180, 180);
+          text-shadow: 1px 1px 2px #000;
+          position: absolute;
+          top: 50%;
+          left: -50%;
+          opacity: 0;
+          transition: all 3s ease;
+        }
+        &:hover h2 {
+          top: 50%;
+          left: 20%;
+          opacity: 1;
+        }
+      }
+    }
+
+    main {
+      #about {
+        height: 100vh;
+        display: flex;
+        #ref {
+          width: 50%;
+          height: 100%;
+          position: relative;
+          transition: transform 3s ease-in;
+          h1 {
+            color: orange;
+          }
+          p {
+            font-size: 1.3rem;
+            color: #000;
+          }
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: darkgray;
+            z-index: -1;
+            opacity: 0.8;
+            transform: skewX(-20deg) translateX(-15%) scale(1.3);
+          }
+          &:hover {
+            transform: translateX(10%);
+          }
+          h1 {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            opacity: 0;
+            transition: all 1.5s ease-in-out;
+            transform: translate(-50%, -50%);
+          }
+          p {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            opacity: 0;
+            transition: all 2s ease-in-out;
+            transform: translate(-50%, -50%);
+          }
+          &:hover h1 {
+            top: 30%;
+            opacity: 1;
+          }
+
+          &:hover p {
+            top: 50%;
+            opacity: 1;
+          }
+        }
+        #infos {
+          width: 50%;
+          height: 100%;
+          position: relative;
+          transition: transform 3s ease-in;
+          h2 {
+            color: orange;
+          }
+          p {
+            font-size: 1.3rem;
+            color: #000;
+          }
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: darkgray;
+            z-index: -1;
+            opacity: 0.9;
+            transform: skewX(-20deg) translateX(15%) scale(1.3);
+          }
+          &:hover {
+            transform: translateX(-10%);
+          }
+          h2 {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            opacity: 0;
+            transition: all 1.5s ease-in-out;
+            transform: translate(-40%, -40%);
+          }
+          p {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            opacity: 0;
+            transition: all 2s ease-in-out;
+            transform: translate(-40%, -40%);
+          }
+          &:hover h2 {
+            top: 25%;
+            opacity: 1;
+          }
+          &:hover p {
+            top: 50%;
+            opacity: 1;
+          }
+        }
+      }
+
+      #skills {
+        display: flex;
+        height: 100vh;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        #true,
+        #false {
+          width: 50%;
+          h1 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: blue;
+            }
+          }
+          h2 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: orange;
+            }
+          }
+          .skillbar {
+            position: relative;
+            display: block;
+            margin: 1.4rem auto;
+            width: 85%;
+            background: gray;
+            height: 2.4rem;
+            border-radius: 3px;
+            transition: 0.1s linear;
+            transition-property: width, background-color;
+          }
+          .skillbar-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffffff;
+            background: darkgray;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            span {
+              display: block;
+              background: rgba(0, 0, 0, 0.1);
+              padding: 0 20px;
+              height: 2.4rem;
+              line-height: 35px;
+              text-align: center;
+              border-top-left-radius: 3px;
+              border-bottom-left-radius: 3px;
+            }
+          }
+          .skillbar-bar {
+            height: 2.4rem;
+            width: 0px;
+            background: aqua;
+            border-radius: 3px;
+          }
+          .skill-bar-percent {
+            position: absolute;
+            right: 10px;
+            top: 0.3rem;
+            font-size: 1rem;
+            height: 1.4rem;
+            line-height: 1.5;
+            color: white;
+          }
+        }
+      }
+      #contact {
+        height: 80vh;
+        #joke {
+          .contact-form {
+            .btnContact {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// #min-width: 1024px
+//
+//
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  body {
+    header {
+      #home {
+        height: 40%;
+        background-color: gray;
+        opacity: 0.5;
+        margin-top: 10%;
+        h2 {
+          font-size: 1.5rem;
+          position: absolute;
+          top: 50%;
+          left: 20%;
+          opacity: 1;
+          color: white;
+        }
+      }
+    }
+
+    main {
+      #about {
+        height: 140vh;
+        background: {
+          color: darkgray;
+          image: url("../img/444.jpg");
+          position: bottom;
+          size: cover;
+          attachment: fixed;
+          repeat: no-repeat;
+        }
+        #ref {
+          background-color: darkgray;
+          opacity: 0.8;
+          width: 100%;
+          height: 50%;
+          padding: 10%;
+          h1 {
+            color: orange;
+          }
+          p {
+            font-size: 1.2rem;
+            color: black;
+          }
+        }
+        #infos {
+          background-color: lightgray;
+          opacity: 0.8;
+          h2 {
+            color: orange;
+          }
+          p {
+            font-size: 1.2rem;
+            color: black;
+          }
+          width: 100%;
+          position: absolute;
+          height: 50%;
+          &:after {
+            content: none;
+          }
+        }
+      }
+
+      #skills {
+        display: flex;
+        height: 100vh;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        #true,
+        #false {
+          width: 50%;
+          h1 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: blue;
+            }
+          }
+          h2 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: orange;
+            }
+          }
+          .skillbar {
+            position: relative;
+            display: block;
+            margin: 1.4rem auto;
+            width: 85%;
+            background: gray;
+            height: 2.4rem;
+            border-radius: 3px;
+            transition: 0.1s linear;
+            transition-property: width, background-color;
+          }
+          .skillbar-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffffff;
+            background: darkgray;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            span {
+              display: block;
+              background: rgba(0, 0, 0, 0.1);
+              padding: 0 20px;
+              height: 2.4rem;
+              line-height: 35px;
+              text-align: center;
+              border-top-left-radius: 3px;
+              border-bottom-left-radius: 3px;
+            }
+          }
+          .skillbar-bar {
+            height: 2.4rem;
+            width: 0px;
+            background: aqua;
+            border-radius: 3px;
+          }
+          .skill-bar-percent {
+            position: absolute;
+            right: 10px;
+            top: 0.3rem;
+            font-size: 1rem;
+            height: 1.4rem;
+            line-height: 1.5;
+            color: white;
+          }
+        }
+      }
+
+      #contact {
+        height: 100vh;
+      }
+    }
+  }
+}
+
+// #min-width: 375px
+//
+//
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 1024px) {
+  body {
+    main {
+      #about {
+        height: 180vh;
+        background: {
+          color: darkgray;
+          image: url("../img/444.jpg");
+          position: bottom;
+          size: cover;
+          attachment: fixed;
+          repeat: no-repeat;
+        }
+        #ref {
+          background-color: darkgray;
+          opacity: 0.8;
+          width: 100%;
+          height: 50%;
+          padding: 10%;
+          h1 {
+            color: orange;
+          }
+          p {
+            font-size: 1.2rem;
+            color: black;
+          }
+        }
+        #infos {
+          background-color: lightgray;
+          opacity: 0.8;
+          h2 {
+            color: orange;
+          }
+          p {
+            font-size: 1.2rem;
+            color: black;
+          }
+          width: 100%;
+          position: absolute;
+          height: 50%;
+          &:after {
+            content: none;
+          }
+        }
+      }
+
+      #skills {
+        margin: 0 auto;
+        display: block;
+        height: 150vh;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        #true,
+        #false {
+          width: 100%;
+          h1 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: blue;
+            }
+          }
+          h2 {
+            color: white;
+            font-family: "Raleway", sans-serif;
+            transition: color 2s ease-in-out;
+            &:hover {
+              color: orange;
+            }
+          }
+          .skillbar {
+            position: relative;
+            display: block;
+            margin: 1.4rem auto;
+            width: 85%;
+            background: gray;
+            height: 2.4rem;
+            border-radius: 3px;
+            transition: 0.1s linear;
+            transition-property: width, background-color;
+          }
+          .skillbar-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffffff;
+            background: darkgray;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            span {
+              display: block;
+              background: rgba(0, 0, 0, 0.1);
+              padding: 0 20px;
+              height: 2.4rem;
+              line-height: 35px;
+              text-align: center;
+              border-top-left-radius: 3px;
+              border-bottom-left-radius: 3px;
+            }
+          }
+          .skillbar-bar {
+            height: 2.4rem;
+            width: 0px;
+            background: aqua;
+            border-radius: 3px;
+          }
+          .skill-bar-percent {
+            position: absolute;
+            right: 10px;
+            top: 0.3rem;
+            font-size: 1rem;
+            height: 1.4rem;
+            line-height: 1.5;
+            color: white;
+          }
+        }
+      }
+      #contact {
+        height: 100vh;
+      }
+    }
+  }
+}
+
+// KEYFRAMES
+// #1
+@-webkit-keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+    transform: translateZ(12px);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+    transform: translateZ(12px);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+// #2
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
